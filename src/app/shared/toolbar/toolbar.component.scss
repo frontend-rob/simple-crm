@@ -1,0 +1,16 @@
+app-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 5rem;
+    padding: 0 2rem;
+    border-bottom: 1px solid var(--bg-neutral-100);
+}
+
+.toolbar-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}

@@ -1,1 +1,34 @@
-/* You can add global styles to this file, and also import other style files */
+@use 'styles/variables';
+@use 'styles/typography';
+@use 'styles/buttons';
+@use 'styles/inputs';
+@use 'styles/scrollbar';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    overscroll-behavior: none;
+}
+
+@media (hover: none) and (pointer: coarse) {
+    html {
+        overscroll-behavior: auto;
+    }
+}
+
+body {
+    text-rendering: optimizelegibility;
+    background-color: var(--bg-base-100);
+    font-family: 'Inter';
+    color: var(--text-secondary);
+}
+
+.hidden {
+    display: none;
+}

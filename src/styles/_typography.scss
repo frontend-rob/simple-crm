@@ -1,0 +1,25 @@
+@font-face {
+    font-family: Inter;
+    font-weight: 300 900;
+    font-style: normal;
+    font-display: swap;
+    src: url('../../public/assets/fonts/inter-variable-font.ttf');
+}
+
+h1,
+h2,
+h3 {
+    color: var(--text-primary);
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}

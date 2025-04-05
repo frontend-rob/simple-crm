@@ -1,0 +1,43 @@
+.modal-add-customer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(0.25rem);
+
+    .modal-content {
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 3rem;
+        max-width: 35rem;
+        width: 100%;
+        margin: auto;
+        border: 1px solid var(--bg-neutral-100);
+        border-radius: 1.25rem;
+        background-color: var(--bg-base-200);
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+    }
+}

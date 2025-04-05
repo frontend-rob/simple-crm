@@ -1,0 +1,33 @@
+<div class="modal-add-customer">
+    <div class="modal-content">
+        <header class="modal-header">
+            <h3>Add Customer</h3>
+            <button class="btn btn-neutral btn-circle" (click)="closeAddCustomerModal()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-x-icon lucide-x">
+                    <path d="M18 6 6 18" />
+                    <path d="m6 6 12 12" />
+                </svg>
+            </button>
+        </header>
+        <form action="">
+            <div class="form-group">
+                <input type="text" name="first-name" [(ngModel)]="customer.firstName" id="" placeholder="First Name" autocomplete="on">
+                <input type="text" name="last-name" [(ngModel)]="customer.lastName" id="" placeholder="Last Name" autocomplete="on">
+            </div>
+            <input type="email" name="email" [(ngModel)]="customer.email" id="" placeholder="E-Mail" autocomplete="on">
+            <input type="text" name="address" [(ngModel)]="customer.address" id="" placeholder="Address" autocomplete="on">
+            <div class="form-group">
+                <input type="text" name="zip-code" [(ngModel)]="customer.zipCode" id="" placeholder="Zip Code" autocomplete="on">
+                <input type="text" name="city"[(ngModel)]="customer.city" id="" placeholder="City" autocomplete="on">
+            </div>
+            <input type="text" name="country" [(ngModel)]="customer.country" id="" placeholder="Country" autocomplete="on">
+        </form>
+        <footer class="modal-footer">
+            <button class="btn btn-primary" (click)="addCustomer()">
+                Save
+            </button>
+        </footer>
+    </div>
+</div>

@@ -1,0 +1,71 @@
+<div class="sidebar-wrapper">
+    <div class="logo-wrapper">x</div>
+    <div class="sidebar-menu">
+        <div class="menu-links">
+            <a routerLink="/dashboard" class="menu-link" [ngClass]="{ 'active': isActive('/dashboard') }">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-layout-dashboard-icon lucide-layout-dashboard">
+                    <rect width="7" height="9" x="3" y="3" rx="1" />
+                    <rect width="7" height="5" x="14" y="3" rx="1" />
+                    <rect width="7" height="9" x="14" y="12" rx="1" />
+                    <rect width="7" height="5" x="3" y="16" rx="1" />
+                </svg>
+                Dashboard
+            </a>
+            <a routerLink="/customers" class="menu-link" [ngClass]="{ 'active': isActive('/customers') }">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-users-round-icon lucide-users-round">
+                    <path d="M18 21a8 8 0 0 0-16 0" />
+                    <circle cx="10" cy="8" r="5" />
+                    <path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3" />
+                </svg>
+                Customers
+            </a>
+            <a routerLink="/legal-notice" class="menu-link" [ngClass]="{ 'active': isActive('/legal-notice') }">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-file-check-icon lucide-file-check">
+                    <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+                    <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+                    <path d="m9 15 2 2 4-4" />
+                </svg>
+                Legal Notice
+            </a>
+            <a routerLink="/privacy-policy" class="menu-link" [ngClass]="{ 'active': isActive('/privacy-policy') }">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-key-icon lucide-file-key">
+                    <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+                    <circle cx="10" cy="16" r="2" />
+                    <path d="m16 10-4.5 4.5" />
+                    <path d="m15 11 1 1" />
+                </svg>
+                Privacy Policy
+            </a>
+        </div>
+    </div>
+    <div class="sidebar-footer">
+        <button class="btn btn-theme" (click)="toggleTheme()" aria-label="Theme Toggle">
+            <svg *ngIf="theme === 'dark'" id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" class="lucide lucide-moon">
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+            </svg>
+            <svg *ngIf="theme === 'light'" id="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" class="lucide lucide-sun">
+                <circle cx="12" cy="12" r="4" />
+                <path d="M12 2v2" />
+                <path d="m19.07 4.93-1.41 1.41" />
+                <path d="M20 12h2" />
+                <path d="m17.66 17.66 1.41 1.41" />
+                <path d="M12 20v2" />
+                <path d="m6.34 17.66-1.41 1.41" />
+                <path d="M2 12h2" />
+                <path d="m4.93 4.93 1.41 1.41" />
+            </svg>
+            {{ theme === 'dark' ? 'Dark Theme' : 'Light Theme' }}
+        </button>
+    </div>
+</div>
