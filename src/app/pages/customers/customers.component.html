@@ -15,6 +15,28 @@
                         </svg>
                     </button>
                 </div>
+                <div class="customer-table-wrapper">
+                    <table class="customer-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Country</th>
+                                <th>City</th>
+                                <th>E-Mail</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let customer of allCustomers" routerLink="/customers/{{ customer.id }}">
+                                <td></td>
+                                <td>{{ customer.firstName }} {{ customer.lastName }}</td>
+                                <td>{{ customer.country }}</td>
+                                <td>{{ customer.city }}</td>
+                                <td>{{ customer.email }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
         <app-modal-add-customer class="hidden"></app-modal-add-customer>

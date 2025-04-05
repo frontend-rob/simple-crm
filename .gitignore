@@ -43,3 +43,8 @@ Thumbs.db
 
 # Fonts
 /public/assets/fonts/inter-variable-font.ttf
+
+# Firebase
+.firebase
+*-debug.log
+.runtimeconfig.json

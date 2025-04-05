@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+// import { Firestore, collection, collectionData } from '@angular/fire/firestore';
+
 
 @Component({
     selector: 'app-root',
     imports: [
         CommonModule,
-        RouterOutlet
+        RouterOutlet,
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss'
@@ -15,6 +17,8 @@ import { RouterOutlet } from '@angular/router';
 export class AppComponent {
 
     theme: string | undefined;
+
+    // firestore: Firestore = inject(Firestore);
 
     ngOnInit(): void {
         this.initializeTheme();

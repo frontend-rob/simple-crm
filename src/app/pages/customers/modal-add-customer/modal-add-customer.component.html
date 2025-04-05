@@ -23,11 +23,11 @@
                 <input type="text" name="city"[(ngModel)]="customer.city" id="" placeholder="City" autocomplete="on">
             </div>
             <input type="text" name="country" [(ngModel)]="customer.country" id="" placeholder="Country" autocomplete="on">
+            <footer class="modal-footer">
+                <button class="btn btn-primary" (click)="addCustomer()">
+                    Save
+                </button>
+            </footer>
         </form>
-        <footer class="modal-footer">
-            <button class="btn btn-primary" (click)="addCustomer()">
-                Save
-            </button>
-        </footer>
     </div>
 </div>
