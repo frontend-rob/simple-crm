@@ -29,12 +29,14 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        height: 2.5rem;
     }
 
     .customer-table-wrapper {
         width: 100%;
         border-radius: .75rem;
         border: 1px solid var(--bg-neutral-100);
+        overflow: auto;
 
         .customer-table {
             width: 100%;
@@ -42,10 +44,10 @@
         }
 
         thead {
+            background-color: var(--bg-neutral-100);
             tr {
                 th {
                     padding: 0.75rem 1.25rem;
-                    border-bottom: 2px solid var(--bg-neutral-200);
                     text-align: left;
                     font-size: 0.875rem;
                     font-weight: 600;
@@ -55,10 +57,11 @@
         }
 
         tbody {
+            background-color: var(--bg-base-200);
             tr {
                 td {
                     padding: 0.75rem 1.25rem;
-                    border-bottom: 1px solid var(--bg-neutral-100);
+                    border-bottom: 1px dashed var(--bg-neutral-100);
                     text-align: left;
                     font-size: 0.875rem;
                     font-weight: 400;
@@ -67,12 +70,20 @@
 
                 &:hover {
                     background-color: var(--bg-neutral-100);
+                    cursor: pointer;
                 }
             }
 
             tr:last-child {
                 td {
                     border-bottom: unset;
+                }
+
+                &:hover {
+                    background-color: var(--bg-neutral-100);
+                    border-bottom-left-radius: 0.75rem;
+                    border-bottom-right-radius: 0.75rem;
+                    overflow: hidden;
                 }
             }
         }

@@ -17,3 +17,18 @@
         }
     }
 }
+
+
+.privacy-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: 100%;
+    height: auto;
+
+    .privacy-header {
+        display: flex;
+        align-items: center;
+        height: 2.5rem;
+    }
+}

@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { CustomersComponent } from './pages/customers/customers.component';
+import { CustomerDetailsComponent } from './pages/customers/customer-details/customer-details.component';
 import { LegalNoticeComponent } from './pages/legal-notice/legal-notice.component';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -21,6 +22,11 @@ export const routes: Routes = [
         path: 'customers',
         title: 'Customers',
         component: CustomersComponent
+    },
+    {
+        path: 'customers/:id',
+        title: 'Customer Details',
+        component: CustomerDetailsComponent
     },
     {
         path: 'legal-notice',

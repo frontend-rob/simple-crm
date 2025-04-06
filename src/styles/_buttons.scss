@@ -5,7 +5,7 @@
     gap: 0.5rem;
     align-items: center;
     width: fit-content;
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 1rem;
     border: unset;
     border-radius: 0.5rem;
     font-size: 0.875rem;
@@ -48,7 +48,7 @@
     gap: 0.75rem;
     padding: 0.75rem;
     width: 100%;
-    background-color: var(--bg-base-100);
+    background-color: var(--bg-base-200);
     color: var(--text-secondary);
     font-size: 1rem;
 
@@ -58,7 +58,7 @@
 
     &:hover {
         border: 1px solid var(--bg-neutral-200);
-        background-color: var(--bg-base-100);
+        background-color: var(--bg-base-200);
     }
 }
 
@@ -115,6 +115,23 @@
 .btn-primary:hover {
     @include button-hover(color-mix(in srgb, var(--bg-primary) 90%, transparent 10%), #18181b);
     transition: 125ms ease;
+}
+
+.btn-error {
+    color: var(--text-primary);
+
+    svg {
+        color: var(--bg-error) !important;
+        transition: none;
+    }
+}
+
+.btn-error:hover {
+    background-color: var(--bg-error) !important;
+
+    svg {
+        color: var(--text-primary) !important;
+    }
 }
 
 .btn-circle {

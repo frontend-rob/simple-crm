@@ -1,0 +1,19 @@
+app-edit-menu {
+    position: absolute;
+    top: 5.5rem;
+    right: 2rem;
+}
+
+.edit-menu-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0.75rem;
+    border-radius: 1.25rem;
+    border: 1px solid var(--bg-neutral-100);
+    background-color: var(--bg-base-200);
+
+    button {
+        width: 100%;
+    }
+}

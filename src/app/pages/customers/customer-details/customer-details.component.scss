@@ -1,0 +1,152 @@
+.customer-detail-wrapper {
+    display: flex;
+    width: 100%;
+    flex: 1;
+
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+    }
+}
+
+.customer-detail-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: 100%;
+    height: auto;
+
+    .customer-detail-header {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        height: 20rem;
+        padding: 2rem;
+
+        .customer-header-content {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        .customer {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            .status-badge {
+                display: flex;
+                align-items: center;
+                gap: 0.25rem;
+                max-width: fit-content;
+                padding: 0.25rem 0.5rem;
+                border-radius: 9999rem;
+                background-color: var(--bg-primary);
+
+                svg {
+                    width: 0.875rem;
+                    height: 0.875rem;
+                    color: #18181b;
+                }
+
+                .badge-text {
+                    font-size: 0.75rem;
+                    font-weight: 400;
+                    color: #18181b;
+                }
+            }
+        }
+
+        // wird durch img ersetzt
+        svg {
+            width: 6rem;
+            height: 6rem;
+            color: var(--bg-neutral-200);
+        }
+
+        button {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+
+            svg {
+                height: 1.5rem;
+                width: 1.5rem;
+                color: #18181b
+            }
+        }
+    }
+}
+
+.detail-cards {
+    display: flex;
+    gap: 1.5rem;
+    padding: 0 2rem 2rem 2rem;
+
+    .customer-detail-card {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+        padding: 1.25rem;
+        border-radius: 1.25rem;
+        border: 1px solid var(--bg-neutral-100);
+        background-color: var(--bg-base-200);
+
+        .card-title {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            svg {
+                width: 1.5rem;
+                height: 1.5rem;
+                color: var(--text-primary);
+            }
+        }
+
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                border-radius: 0.5rem;
+                overflow: auto;
+
+                tr {
+                    border-bottom: 1px dashed var(--bg-neutral-100);
+
+                    td {
+                        padding: 1rem 0;
+                        font-size: 0.875rem;
+                        font-weight: 400;
+                        color: var(--text-secondary);
+                    }
+
+                    td:first-child {
+                        width: 25%;
+                        color: var(--text-primary);
+                    }
+
+                    &:last-child {
+                        border-bottom: none;
+                    }
+
+                    &:last-child td {
+                        padding-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}

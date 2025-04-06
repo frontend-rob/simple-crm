@@ -53,4 +53,8 @@ export class SidebarComponent {
             fragment: 'ignored'
         });
     }
+
+    isActiveStartsWith(url: string): boolean {
+        return this.router.url.startsWith(url);
+    }
 }

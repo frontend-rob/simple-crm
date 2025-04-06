@@ -29,7 +29,7 @@
                         <tbody>
                             <tr *ngFor="let customer of allCustomers" routerLink="/customers/{{ customer.id }}">
                                 <td></td>
-                                <td>{{ customer.firstName }} {{ customer.lastName }}</td>
+                                <td>{{ customer.lastName }}, {{ customer.firstName }}</td>
                                 <td>{{ customer.country }}</td>
                                 <td>{{ customer.city }}</td>
                                 <td>{{ customer.email }}</td>

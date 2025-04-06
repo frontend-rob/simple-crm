@@ -31,7 +31,7 @@ export class CustomersComponent implements OnInit {
 
     allCustomers: Customer[] = [];
 
-    private firestore: Firestore = inject(Firestore);
+    constructor(private firestore: Firestore = inject(Firestore)) { }
 
     ngOnInit(): void {
         const customersCollection = collection(this.firestore, 'customers');
