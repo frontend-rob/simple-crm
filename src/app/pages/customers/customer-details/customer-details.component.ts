@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { SidebarComponent } from '../../../shared/sidebar/sidebar.component';
@@ -24,20 +24,17 @@ import { Customer } from '../../../models/customers.class';
     ]
 })
 
-export class CustomerDetailsComponent implements OnInit {
+export class CustomerDetailsComponent {
 
     customerID: string = '';
-
     customerData: Customer = new Customer();
+    firestore: Firestore = inject(Firestore);
 
-    constructor(private route: ActivatedRoute, private firestore: Firestore = inject(Firestore)) { }
-
-    ngOnInit(): void {
+    constructor(private route: ActivatedRoute) {
         this.route.params.subscribe(params => {
             this.customerID = params['id'];
-            console.log(this.customerID);
-
             this.getCustomerData(this.customerID);
+            // console.log(this.customerID);
         });
     }
 
@@ -55,13 +52,31 @@ export class CustomerDetailsComponent implements OnInit {
     handleCustomerData(data: any) {
         this.customerData = new Customer(data);
         this.customerData.id = this.customerID;
-        console.log('Customer Data:', data);
+        // console.log('Customer Data:', data);
     }
 
     toggleEditMenu() {
         const editMenu = document.querySelector('app-edit-menu') as HTMLElement;
         editMenu.classList.toggle('hidden');
 
+        if (!editMenu.classList.contains('hidden')) {
+            const closeMenu = (event: MouseEvent) => {
+                if (!editMenu.contains(event.target as Node)) {
+                    editMenu.classList.add('hidden');
+                    document.removeEventListener('click', closeMenu);
+                }
+            };
+            setTimeout(() => {
+                document.addEventListener('click', closeMenu);
+            });
+        }
     }
 
+    deleteCustomerFromDB() {
+        const editMenu = document.querySelector('app-edit-menu') as any;
+        if (editMenu && editMenu.deleteCustomer) {
+            editMenu.customerID = this.customerID;
+            editMenu.deleteCustomer();
+        }
+    }
 }

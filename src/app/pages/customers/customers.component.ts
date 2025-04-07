@@ -1,10 +1,10 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SidebarComponent } from '../../shared/sidebar/sidebar.component';
 import { ToolbarComponent } from '../../shared/toolbar/toolbar.component';
 import { ModalAddCustomerComponent } from './modal-add-customer/modal-add-customer.component';
 import { Customer } from '../../models/customers.class';
-import { Firestore, collection, addDoc, collectionData } from '@angular/fire/firestore';
+import { Firestore, collection, collectionData } from '@angular/fire/firestore';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -25,20 +25,18 @@ import { RouterLink } from '@angular/router';
     ]
 })
 
-export class CustomersComponent implements OnInit {
+export class CustomersComponent {
 
     customer = new Customer();
-
     allCustomers: Customer[] = [];
+    firestore: Firestore = inject(Firestore);
 
-    constructor(private firestore: Firestore = inject(Firestore)) { }
-
-    ngOnInit(): void {
+    constructor() {
         const customersCollection = collection(this.firestore, 'customers');
         collectionData(customersCollection, { idField: 'id' })
         .subscribe((customers: any) => {
-            console.log('Customers with IDs: ', customers);
             this.allCustomers = customers;
+            // console.log('Customers with IDs: ', customers);
         });
     }
 
@@ -46,5 +44,4 @@ export class CustomersComponent implements OnInit {
         const modal = document.querySelector('app-modal-add-customer') as HTMLElement;
         modal.classList.remove('hidden');
     }
-
 }

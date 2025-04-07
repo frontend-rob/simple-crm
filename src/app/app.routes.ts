@@ -4,14 +4,14 @@ import { CustomersComponent } from './pages/customers/customers.component';
 import { CustomerDetailsComponent } from './pages/customers/customer-details/customer-details.component';
 import { LegalNoticeComponent } from './pages/legal-notice/legal-notice.component';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
-import { LoginComponent } from './pages/login/login.component';
+import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 
 
 export const routes: Routes = [
     {
         path: '',
         title: 'Simple CRM',
-        component: LoginComponent
+        component: LandingPageComponent
     },
     {
         path: 'dashboard',

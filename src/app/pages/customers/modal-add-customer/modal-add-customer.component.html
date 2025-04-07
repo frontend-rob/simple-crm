@@ -11,22 +11,20 @@
                 </svg>
             </button>
         </header>
-        <form action="">
+        <form (ngSubmit)="addCustomer()">
             <div class="form-group">
-                <input type="text" name="first-name" [(ngModel)]="customer.firstName" id="" placeholder="First Name" autocomplete="on">
-                <input type="text" name="last-name" [(ngModel)]="customer.lastName" id="" placeholder="Last Name" autocomplete="on">
+                <input type="text" name="first-name" [(ngModel)]="customer.firstName" placeholder="First Name" autocomplete="on">
+                <input type="text" name="last-name" [(ngModel)]="customer.lastName" placeholder="Last Name" autocomplete="on">
             </div>
-            <input type="email" name="email" [(ngModel)]="customer.email" id="" placeholder="E-Mail" autocomplete="on">
-            <input type="text" name="address" [(ngModel)]="customer.address" id="" placeholder="Address" autocomplete="on">
+            <input type="email" name="email" [(ngModel)]="customer.email" placeholder="E-Mail" autocomplete="on">
+            <input type="text" name="address" [(ngModel)]="customer.address" placeholder="Address" autocomplete="on">
             <div class="form-group">
-                <input type="text" name="zip-code" [(ngModel)]="customer.zipCode" id="" placeholder="Zip Code" autocomplete="on">
-                <input type="text" name="city"[(ngModel)]="customer.city" id="" placeholder="City" autocomplete="on">
+                <input type="text" name="zip-code" [(ngModel)]="customer.zipCode" placeholder="Zip Code" autocomplete="on">
+                <input type="text" name="city" [(ngModel)]="customer.city" placeholder="City" autocomplete="on">
             </div>
-            <input type="text" name="country" [(ngModel)]="customer.country" id="" placeholder="Country" autocomplete="on">
+            <input type="text" name="country" [(ngModel)]="customer.country" placeholder="Country" autocomplete="on">
             <footer class="modal-footer">
-                <button class="btn btn-primary" (click)="addCustomer()">
-                    Save
-                </button>
+                <button class="btn btn-primary" type="submit">Save</button>
             </footer>
         </form>
     </div>
