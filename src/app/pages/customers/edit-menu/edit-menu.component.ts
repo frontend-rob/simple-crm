@@ -14,9 +14,7 @@ export class EditMenuComponent {
 
     firestore: Firestore = inject(Firestore);
 
-    editPersonData() { }
-
-    editAddressData() { }
+    editCustomerData() { }
 
     deleteCustomer() {
         if (this.customerID) {
@@ -35,6 +33,11 @@ export class EditMenuComponent {
     toggleEditMenu() {
         const menuElement = document.querySelector('app-edit-menu') as HTMLElement;
         menuElement.classList.toggle('hidden');
-
     }
+
+    openEditCustomerModal() {
+        const modal = document.querySelector('app-modal-edit-customer') as HTMLElement;
+        modal.classList.remove('hidden');
+    }
+
 }

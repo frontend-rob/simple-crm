@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { SidebarComponent } from '../../../shared/sidebar/sidebar.component';
 import { ToolbarComponent } from '../../../shared/toolbar/toolbar.component';
+import { ModalEditCustomerComponent } from '../modal-edit-customer/modal-edit-customer.component';
 import { EditMenuComponent } from '../edit-menu/edit-menu.component';
 import { Firestore, doc, getDoc } from '@angular/fire/firestore';
 import { Customer } from '../../../models/customers.class';
@@ -13,7 +14,8 @@ import { Customer } from '../../../models/customers.class';
         CommonModule,
         SidebarComponent,
         ToolbarComponent,
-        EditMenuComponent
+        EditMenuComponent,
+        ModalEditCustomerComponent
     ],
     templateUrl: './customer-details.component.html',
     styleUrls: [
@@ -34,7 +36,7 @@ export class CustomerDetailsComponent {
         this.route.params.subscribe(params => {
             this.customerID = params['id'];
             this.getCustomerData(this.customerID);
-            // console.log(this.customerID);
+            console.log(this.customerID);
         });
     }
 
@@ -52,7 +54,7 @@ export class CustomerDetailsComponent {
     handleCustomerData(data: any) {
         this.customerData = new Customer(data);
         this.customerData.id = this.customerID;
-        // console.log('Customer Data:', data);
+        console.log('Customer Data:', data);
     }
 
     toggleEditMenu() {

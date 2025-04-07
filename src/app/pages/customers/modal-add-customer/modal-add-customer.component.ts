@@ -16,12 +16,14 @@ import { Firestore, collection, addDoc } from '@angular/fire/firestore';
 
 export class ModalAddCustomerComponent {
 
+    currentTab: number = 1;
     customer = new Customer();
     firestore: Firestore = inject(Firestore);
 
     closeAddCustomerModal() {
         const modal = document.querySelector('app-modal-add-customer') as HTMLElement;
         modal.classList.add('hidden');
+        this.currentTab = 1;
     }
 
     addCustomer() {
@@ -34,6 +36,7 @@ export class ModalAddCustomerComponent {
         this.closeAddCustomerModal();
         console.log(this.customer);
         this.resetAddCustomerForm();
+        this.currentTab = 1;
     }
 
     resetAddCustomerForm() {

@@ -59,12 +59,12 @@
                                     <td>{{ customerData.lastName }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Customer ID:</td>
-                                    <td>{{ customerData.id }}</td>
-                                </tr>
-                                <tr>
                                     <td>E-Mail:</td>
                                     <td>{{ customerData.email }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Phone:</td>
+                                    <td>{{ customerData.phone }}</td>
                                 </tr>
                             </table>
                         </div>
@@ -102,6 +102,7 @@
                     </div>
                 </section>
             </div>
+            <app-modal-edit-customer class="hidden"></app-modal-edit-customer>
         </div>
     </div>
 </div>

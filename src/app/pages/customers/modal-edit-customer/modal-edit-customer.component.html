@@ -1,8 +1,8 @@
-<div class="modal-add-customer">
+<div class="modal-edit-customer">
     <div class="modal-content">
         <header class="modal-header">
-            <h3>Add Customer</h3>
-            <button class="btn btn-neutral btn-circle" (click)="closeAddCustomerModal()">
+            <h3>Edit Customer Data</h3>
+            <button class="btn btn-neutral btn-circle" (click)="closeEditCustomerModal()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="lucide lucide-x-icon lucide-x">
@@ -11,13 +11,12 @@
                 </svg>
             </button>
         </header>
-
         <div class="modal-inner-content">
             <!-- Tab Navigation -->
             <div class="tab-navigation">
                 <div class="tab-item" [class.active]="currentTab === 1" (click)="currentTab = 1">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
                         class="lucide lucide-user-round-icon lucide-user-round">
                         <circle cx="12" cy="8" r="5" />
                         <path d="M20 21a8 8 0 0 0-16 0" />
@@ -25,22 +24,26 @@
                     Personal
                 </div>
                 <div class="tab-item" [class.active]="currentTab === 2" (click)="currentTab = 2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin-icon lucide-map-pin">
-                        <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-map-pin-icon lucide-map-pin">
+                        <path
+                            d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
                         <circle cx="12" cy="10" r="3" />
                     </svg>
                     Address
                 </div>
                 <div class="tab-item" [class.active]="currentTab === 3" (click)="currentTab = 3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkle-icon lucide-sparkle">
-                        <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-sparkle-icon lucide-sparkle">
+                        <path
+                            d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" />
                     </svg>
                     Other Details
                 </div>
             </div>
-            <form (ngSubmit)="addCustomer()">
+            <form (ngSubmit)="updateCustomerData()">
                 <!-- Tab 1: Personal Info -->
                 <div *ngIf="currentTab === 1" class="tab-content">
                     <input type="text" name="first-name" [(ngModel)]="customer.firstName" placeholder="First Name" autocomplete="on">
