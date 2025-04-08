@@ -26,9 +26,20 @@
     .customer-detail-header {
         position: relative;
         display: flex;
-        align-items: flex-end;
+        flex-direction: column;
+        justify-content: space-between;
         height: 20rem;
         padding: 2rem;
+
+        .customer-meta-info {
+            display: flex;
+            flex-direction: column;
+
+            span {
+                font-size: 0.75rem;
+                color: var(--text-secondary);
+            }
+        }
 
         .customer-header-content {
             display: flex;
@@ -66,8 +77,8 @@
 
         // wird durch img ersetzt
         svg {
-            width: 6rem;
-            height: 6rem;
+            width: 8rem;
+            height: 8rem;
             color: var(--bg-neutral-200);
         }
 

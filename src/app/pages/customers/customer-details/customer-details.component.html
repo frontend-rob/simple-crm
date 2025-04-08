@@ -5,6 +5,10 @@
         <div class="content-wrapper">
             <div class="customer-detail-content">
                 <header class="customer-detail-header">
+                    <div class="customer-meta-info">
+                        <span>ID: {{ customerData.id }}</span>
+                        <span>Created: {{ customerData.createdOn }}</span>
+                    </div>
                     <div class="customer-header-content">
                         <svg class="profile-img" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
@@ -102,7 +106,7 @@
                     </div>
                 </section>
             </div>
-            <app-modal-edit-customer class="hidden"></app-modal-edit-customer>
+            <app-modal-edit-customer class="hidden" [updateCustomer]="customerData"></app-modal-edit-customer>
         </div>
     </div>
 </div>

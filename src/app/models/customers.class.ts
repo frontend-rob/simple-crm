@@ -8,6 +8,7 @@ export class Customer {
     zipCode: number;
     city: string;
     country: string;
+    createdOn: string;
 
     constructor(object?: any) {
         this.id = object ? object.id : undefined;
@@ -19,6 +20,7 @@ export class Customer {
         this.zipCode = object ? object.zipCode : '';
         this.city = object ? object.city : '';
         this.country = object ? object.country : '';
+        this.createdOn = object ? object.createdOn : '';
     }
 
     public toJSON() {

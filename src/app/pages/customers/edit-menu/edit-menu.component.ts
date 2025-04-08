@@ -1,5 +1,6 @@
 import { Component, Input, inject } from '@angular/core';
 import { Firestore, doc, deleteDoc } from '@angular/fire/firestore';
+import { Customer } from '../../../models/customers.class';
 
 @Component({
     selector: 'app-edit-menu',
@@ -12,9 +13,9 @@ export class EditMenuComponent {
 
     @Input() customerID: string = '';
 
-    firestore: Firestore = inject(Firestore);
+    customerData!: Customer;
 
-    editCustomerData() { }
+    firestore: Firestore = inject(Firestore);
 
     deleteCustomer() {
         if (this.customerID) {
@@ -36,8 +37,9 @@ export class EditMenuComponent {
     }
 
     openEditCustomerModal() {
-        const modal = document.querySelector('app-modal-edit-customer') as HTMLElement;
-        modal.classList.remove('hidden');
+        const editModal = document.querySelector('app-modal-edit-customer') as HTMLElement;
+        editModal.classList.remove('hidden');
+        
     }
 
 }

@@ -28,7 +28,11 @@ export class ModalAddCustomerComponent {
 
     addCustomer() {
         const customersCollection = collection(this.firestore, 'customers');
-        addDoc(customersCollection, this.customer.toJSON())
+        const customerData = {
+            ...this.customer.toJSON(),
+            createdOn: new Date().toISOString().split('T')[0]
+        };
+        addDoc(customersCollection, customerData)
         .then((result: any) => {
             console.log('Customer added successfully', result);
         });

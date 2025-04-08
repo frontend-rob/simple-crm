@@ -43,20 +43,20 @@
                     Other Details
                 </div>
             </div>
-            <form (ngSubmit)="updateCustomerData()">
+            <form (ngSubmit)="saveUpdatedCustomerData()">
                 <!-- Tab 1: Personal Info -->
                 <div *ngIf="currentTab === 1" class="tab-content">
-                    <input type="text" name="first-name" [(ngModel)]="customer.firstName" placeholder="First Name" autocomplete="on">
-                    <input type="text" name="last-name" [(ngModel)]="customer.lastName" placeholder="Last Name" autocomplete="on">
-                    <input type="email" name="email" [(ngModel)]="customer.email" placeholder="E-Mail" autocomplete="on">
-                    <input type="text" name="phone" [(ngModel)]="customer.phone" placeholder="Phone" autocomplete="on">
+                    <input type="text" name="first-name" [(ngModel)]="updateCustomer.firstName" placeholder="First Name" autocomplete="on">
+                    <input type="text" name="last-name" [(ngModel)]="updateCustomer.lastName" placeholder="Last Name" autocomplete="on">
+                    <input type="email" name="email" [(ngModel)]="updateCustomer.email" placeholder="E-Mail" autocomplete="on">
+                    <input type="text" name="phone" [(ngModel)]="updateCustomer.phone" placeholder="Phone" autocomplete="on">
                 </div>
                 <!-- Tab 2: Address -->
                 <div *ngIf="currentTab === 2" class="tab-content">
-                    <input type="text" name="address" [(ngModel)]="customer.address" placeholder="Address" autocomplete="on">
-                    <input type="text" name="zip-code" [(ngModel)]="customer.zipCode" placeholder="Zip Code" autocomplete="on">
-                    <input type="text" name="city" [(ngModel)]="customer.city" placeholder="City" autocomplete="on">
-                    <input type="text" name="country" [(ngModel)]="customer.country" placeholder="Country" autocomplete="on">
+                    <input type="text" name="address" [(ngModel)]="updateCustomer.address" placeholder="Address" autocomplete="on">
+                    <input type="text" name="zip-code" [(ngModel)]="updateCustomer.zipCode" placeholder="Zip Code" autocomplete="on">
+                    <input type="text" name="city" [(ngModel)]="updateCustomer.city" placeholder="City" autocomplete="on">
+                    <input type="text" name="country" [(ngModel)]="updateCustomer.country" placeholder="Country" autocomplete="on">
                 </div>
                 <!-- Tab 3: Other Details -->
                 <div *ngIf="currentTab === 3" class="tab-content">

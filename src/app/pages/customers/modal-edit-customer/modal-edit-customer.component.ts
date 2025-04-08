@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { Customer } from '../../../models/customers.class';
 import { FormsModule } from '@angular/forms';
+import { Firestore, collection, addDoc, doc, updateDoc } from '@angular/fire/firestore';
 
 @Component({
     selector: 'app-modal-edit-customer',
@@ -13,8 +14,9 @@ import { FormsModule } from '@angular/forms';
     styleUrls: ['./modal-edit-customer.component.scss']
 })
 export class ModalEditCustomerComponent {
-    @Input() customer: Customer = new Customer();
 
+    @Input() updateCustomer!: Customer;
+    firestore: Firestore = inject(Firestore);
     currentTab: number = 1;
 
     closeEditCustomerModal() {
@@ -23,8 +25,14 @@ export class ModalEditCustomerComponent {
         this.currentTab = 1;
     }
 
-    updateCustomerData() {
-        console.log('Updated Customer Data:', this.customer);
-        this.closeEditCustomerModal();
+    saveUpdatedCustomerData() {
+        if (this.updateCustomer.id) {
+            const customerDocRef = doc(this.firestore, 'customers', this.updateCustomer.id);
+            updateDoc(customerDocRef, this.updateCustomer.toJSON())
+                .then(() => this.closeEditCustomerModal())
+                .catch(error => console.error('Error updating customer:', error));
+        } else {
+            console.error('Error: Customer ID is undefined.');
+        }
     }
 }
