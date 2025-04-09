@@ -6,23 +6,50 @@
             <div class="customers-content">
                 <div class="customers-header">
                     <h2>Customers</h2>
-                    <button class="btn btn-primary btn-circle" (click)="openAddCustomerModal()">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="lucide lucide-plus-icon lucide-plus">
-                            <path d="M5 12h14" />
-                            <path d="M12 5v14" />
-                        </svg>
-                    </button>
+                    <div class="customer-action-buttons">
+                        <button class="btn btn-circle btn-neutral" (click)="showSearchBar()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-search-icon lucide-search">
+                                <circle cx="11" cy="11" r="8" />
+                                <path d="m21 21-4.3-4.3" />
+                            </svg>
+                        </button>
+                        <button class="btn btn-primary btn-circle" (click)="openAddCustomerModal()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus">
+                                <path d="M5 12h14" />
+                                <path d="M12 5v14" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
+                <input id="search-bar" type="search" name="search-customer" class="hidden" placeholder="search customer"
+                    (input)="filterCustomers($event)" autofocus>
                 <div class="customer-table-wrapper">
                     <table class="customer-table">
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Name</th>
-                                <th>Country</th>
-                                <th>City</th>
+                                <th class="sortable" (click)="sortBy('lastName')">
+                                    Name
+                                    <span *ngIf="sortField === 'lastName'">
+                                        {{ sortDirection === 'asc' ? '↑' : '↓' }}
+                                    </span>
+                                </th>
+                                <th class="sortable" (click)="sortBy('country')">
+                                    Country
+                                    <span *ngIf="sortField === 'country'">
+                                        {{ sortDirection === 'asc' ? '↑' : '↓' }}
+                                    </span>
+                                </th>
+                                <th class="sortable" (click)="sortBy('city')">
+                                    City
+                                    <span *ngIf="sortField === 'city'">
+                                        {{ sortDirection === 'asc' ? '↑' : '↓' }}
+                                    </span>
+                                </th>
                                 <th>E-Mail</th>
                             </tr>
                         </thead>

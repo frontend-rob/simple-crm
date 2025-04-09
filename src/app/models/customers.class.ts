@@ -1,4 +1,5 @@
 export class Customer {
+    [key: string]: any;
     id?: string;
     firstName: string;
     lastName: string;

@@ -32,6 +32,12 @@
         height: 2.5rem;
     }
 
+    .customer-action-buttons {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
     .customer-table-wrapper {
         width: 100%;
         border-radius: .75rem;
@@ -45,6 +51,7 @@
 
         thead {
             background-color: var(--bg-neutral-100);
+
             tr {
                 th {
                     padding: 0.75rem 1.25rem;
@@ -53,11 +60,16 @@
                     font-weight: 600;
                     color: var(--text-secondary);
                 }
+
+                .sortable {
+                    cursor: pointer;
+                }
             }
         }
 
         tbody {
             background-color: var(--bg-base-200);
+
             tr {
                 td {
                     padding: 0.75rem 1.25rem;

@@ -34,23 +34,38 @@
         .customer-meta-info {
             display: flex;
             flex-direction: column;
+            gap: 0.25rem;
 
-            span {
+            .meta-data {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
                 font-size: 0.75rem;
                 color: var(--text-secondary);
+
+                svg {
+                    width: 0.875rem;
+                    height: 0.875rem;
+                    color: var(--text-secondary);
+                }
             }
         }
 
         .customer-header-content {
             display: flex;
             align-items: center;
-            gap: 1.25rem;
+            gap: 1rem;
         }
 
         .customer {
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
+
+            span {
+                font-size: 0.75rem;
+                color: var(--text-secondary);
+            }
 
             .status-badge {
                 display: flex;
