@@ -44,6 +44,9 @@ Thumbs.db
 # Fonts
 /public/assets/fonts/inter-variable-font.ttf
 
+# Avatar Images
+/public/assets/img/*.svg
+
 # Firebase
 .firebase
 *-debug.log

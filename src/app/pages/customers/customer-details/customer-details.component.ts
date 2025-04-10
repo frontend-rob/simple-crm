@@ -5,7 +5,7 @@ import { SidebarComponent } from '../../../shared/sidebar/sidebar.component';
 import { ToolbarComponent } from '../../../shared/toolbar/toolbar.component';
 import { ModalEditCustomerComponent } from '../modal-edit-customer/modal-edit-customer.component';
 import { EditMenuComponent } from '../edit-menu/edit-menu.component';
-import { Firestore, doc, getDoc } from '@angular/fire/firestore';
+import { Firestore, doc , onSnapshot } from '@angular/fire/firestore';
 import { Customer } from '../../../models/customers.class';
 
 @Component({
@@ -30,6 +30,7 @@ export class CustomerDetailsComponent {
 
     customerID: string = '';
     customerData: Customer = new Customer();
+    copiedCustomer: Customer = new Customer();
     firestore: Firestore = inject(Firestore);
 
     constructor(private route: ActivatedRoute) {
@@ -40,13 +41,24 @@ export class CustomerDetailsComponent {
         });
     }
 
+    // getCustomerData(customerID: string) {
+    //     const customerDoc = doc(this.firestore, `customers/${customerID}`);
+    //     getDoc(customerDoc).then(docSnapshot => {
+    //         if (docSnapshot.exists()) {
+    //             this.handleCustomerData(docSnapshot.data());
+    //         }
+    //     }).catch((error: Error) => {
+    //         console.error('Error fetching customer data:', error);
+    //     });
+    // }
     getCustomerData(customerID: string) {
         const customerDoc = doc(this.firestore, `customers/${customerID}`);
-        getDoc(customerDoc).then(docSnapshot => {
+
+        onSnapshot(customerDoc, (docSnapshot) => {
             if (docSnapshot.exists()) {
                 this.handleCustomerData(docSnapshot.data());
             }
-        }).catch((error: Error) => {
+        }, (error) => {
             console.error('Error fetching customer data:', error);
         });
     }
@@ -60,6 +72,9 @@ export class CustomerDetailsComponent {
     toggleEditMenu() {
         const editMenu = document.querySelector('app-edit-menu') as HTMLElement;
         editMenu.classList.toggle('hidden');
+
+        this.copiedCustomer = new Customer({ ...this.customerData });
+
 
         if (!editMenu.classList.contains('hidden')) {
             const closeMenu = (event: MouseEvent) => {

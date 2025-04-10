@@ -7,9 +7,9 @@
                 <header class="customer-detail-header">
                     <div class="customer-meta-info">
                         <span class="meta-data">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                class="lucide lucide-hash-icon lucide-hash">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-hash-icon lucide-hash">
                                 <line x1="4" x2="20" y1="9" y2="9" />
                                 <line x1="4" x2="20" y1="15" y2="15" />
                                 <line x1="10" x2="8" y1="3" y2="21" />
@@ -18,9 +18,9 @@
                             {{ customerData.id }}
                         </span>
                         <span class="meta-data">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                class="lucide lucide-calendar-plus-icon lucide-calendar-plus">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-calendar-plus-icon lucide-calendar-plus">
                                 <path d="M8 2v4" />
                                 <path d="M16 2v4" />
                                 <path d="M21 13V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8" />
@@ -32,14 +32,7 @@
                         </span>
                     </div>
                     <div class="customer-header-content">
-                        <svg class="profile-img" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
-                            stroke-linecap="round" stroke-linejoin="round"
-                            class="lucide lucide-circle-user-round-icon lucide-circle-user-round">
-                            <path d="M18 20a6 6 0 0 0-12 0" />
-                            <circle cx="12" cy="10" r="4" />
-                            <circle cx="12" cy="12" r="10" />
-                        </svg>
+                        <img class="profile-img" [src]="'assets/img/' + (customerData.avatar || 'av-0') + '.svg'" alt="Profile Image">
                         <div class="customer">
                             <h2>{{ customerData.firstName }} {{ customerData.lastName }}</h2>
                             <div class="status-badge">
@@ -128,7 +121,7 @@
                     </div>
                 </section>
             </div>
-            <app-modal-edit-customer class="hidden" [updateCustomer]="customerData"></app-modal-edit-customer>
+            <app-modal-edit-customer class="hidden" [updateCustomerData]="copiedCustomer"></app-modal-edit-customer>
         </div>
     </div>
 </div>
