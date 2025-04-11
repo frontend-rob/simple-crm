@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { SidebarComponent } from '../../../shared/sidebar/sidebar.component';
 import { ToolbarComponent } from '../../../shared/toolbar/toolbar.component';
 import { ModalEditCustomerComponent } from '../modal-edit-customer/modal-edit-customer.component';
@@ -12,6 +12,7 @@ import { Customer } from '../../../models/customers.class';
     selector: 'app-customer-details',
     imports: [
         CommonModule,
+        RouterLink,
         SidebarComponent,
         ToolbarComponent,
         EditMenuComponent,
