@@ -41,7 +41,7 @@ export class SidebarComponent {
 
     updateThemeColor(theme: string): void {
         const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-        const themeColor = theme === 'dark' ? '#0f0f0f' : '#f8f8f8';
+        const themeColor = theme === 'dark' ? '#1c1c1f' : '#ffffff';
         metaThemeColor?.setAttribute('content', themeColor);
     }
     

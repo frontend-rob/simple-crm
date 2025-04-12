@@ -1,5 +1,8 @@
 <div class="sidebar-wrapper">
-    <div class="logo-wrapper">x</div>
+    <a routerLink="/dashboard" class="logo-wrapper">
+        <img class="main-logo" src="assets/crm-logo.svg" alt="Simple CRM Logo">
+        <span class="logo-text">Simple CRM</span>
+    </a>
     <div class="sidebar-menu">
         <div class="menu-links">
             <a routerLink="/dashboard" class="menu-link" [ngClass]="{ 'active': isActive('/dashboard') }">

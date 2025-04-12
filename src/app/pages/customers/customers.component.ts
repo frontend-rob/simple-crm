@@ -1,11 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { SidebarComponent } from '../../shared/sidebar/sidebar.component';
 import { ToolbarComponent } from '../../shared/toolbar/toolbar.component';
 import { ModalAddCustomerComponent } from './modal-add-customer/modal-add-customer.component';
-import { Customer } from '../../models/customers.class';
 import { Firestore, collection, collectionData } from '@angular/fire/firestore';
-import { RouterLink } from '@angular/router';
+import { Customer } from '../../models/customers.class';
 
 @Component({
     selector: 'app-customers',

@@ -7,6 +7,23 @@
                 <div class="dashboard-header">
                     <h2>Dashboard</h2>
                 </div>
+                <section class="dashboard-cards">
+                    <app-dashboard-simple-card
+                        *ngFor="let card of simpleDashboardCards"
+                        [title]="card.title"
+                        [value]="card.value"
+                        [icon]="card.icon">
+                    </app-dashboard-simple-card>
+                </section>
+                <section class="dashboard-cards">
+                    <app-dashboard-table-card
+                        *ngFor="let card of tableDashboardCards"
+                        [title]="card.title"
+                        [key]="card.key"
+                        [data]="card.data"
+                        [icon]="card.icon">
+                    </app-dashboard-table-card>
+                </section>
             </div>
         </div>
     </div>

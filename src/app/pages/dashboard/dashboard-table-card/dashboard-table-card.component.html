@@ -1,0 +1,24 @@
+<div class="dashboard-card">
+    <div class="dashboard-card-header">
+        <div class="card-icon" [innerHTML]="sanitizedIcon"></div>
+        <h3>{{ title }}</h3>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <td>#</td>
+                <td>{{ key | titlecase }}</td>
+                <td>Customers</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of data; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ item[key] }}</td>
+                <td>
+                    <div class="count-badge">{{ item['count'] }}</div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

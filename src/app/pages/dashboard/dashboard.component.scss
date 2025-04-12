@@ -30,4 +30,11 @@
         align-items: center;
         height: 2.5rem;
     }
+
+    .dashboard-cards {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        width: 100%;
+    }
 }
