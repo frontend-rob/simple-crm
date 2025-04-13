@@ -1,0 +1,60 @@
+.landing-page-hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    height: 100dvh;
+    padding: 2rem;
+    background-color: var(--bg-base-100);
+
+    .landing-page-logo {
+        width: 16rem;
+        height: 16rem;
+    }
+
+    .landing-page-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+
+        span {
+            text-align: center;
+            text-wrap: pretty;
+            color: var(--text-secondary);
+        }
+    }
+
+    .btn-demo {
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    button {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+    }
+}
+
+.landing-page-footer {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    height: 4rem;
+    font-size: 0.875rem;
+
+    a {
+        text-decoration: none;
+        color: var(--text-secondary);
+
+        &:hover {
+            color: var(--text-primary);
+        }
+    }
+}

@@ -1,2 +1,42 @@
-<p>ladning page works!</p>
-<a routerLink="dashboard" class="btn">Guest LogIn</a>
+<div class="landing-page-hero">
+    <img class="landing-page-logo slide-in-blurred-top" src="./assets/crm-logo.svg" alt="Main Logo">
+    <div class="landing-page-title fade-in" [ngStyle]="{'animation-delay': '1000ms'}">
+        <h2>Simple CRM</h2>
+        <span>The easiest way to keep track of your customers.</span>
+    </div>
+    <a routerLink="dashboard" class="btn btn-neutral btn-demo fade-in" [ngStyle]="{'animation-delay': '1000ms'}">
+        Try the Demo
+    </a>
+    <button class="btn btn-ghost btn-outline btn-circle fade-in"
+        [ngStyle]="{'animation-delay': '1000ms'}"
+        (click)="toggleTheme()">
+        <svg *ngIf="theme === 'dark'" id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" class="lucide lucide-moon">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+        </svg>
+        <svg *ngIf="theme === 'light'" id="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" class="lucide lucide-sun">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2" />
+            <path d="m19.07 4.93-1.41 1.41" />
+            <path d="M20 12h2" />
+            <path d="m17.66 17.66 1.41 1.41" />
+            <path d="M12 20v2" />
+            <path d="m6.34 17.66-1.41 1.41" />
+            <path d="M2 12h2" />
+            <path d="m4.93 4.93 1.41 1.41" />
+        </svg>
+    </button>
+    <footer class="landing-page-footer">
+        <a routerLink="legal-notice" class="fade-in" target="_blank" rel="noopener noreferrer"
+            [ngStyle]="{'animation-delay': '1000ms'}">
+            Legal Notice
+        </a>
+        <a routerLink="privacy-policy" class="fade-in" target="_blank" rel="noopener noreferrer"
+            [ngStyle]="{'animation-delay': '1000ms'}">
+            Privacy Policy
+        </a>
+    </footer>
+</div>
