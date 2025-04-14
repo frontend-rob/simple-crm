@@ -69,10 +69,16 @@ export class DashboardComponent {
 
     firestore: Firestore = inject(Firestore);
 
+    /**
+     * initializes the component and fetches customer data from Firestore.
+     */
     constructor() {
         this.fetchCustomerData();
     }
 
+    /**
+     * fetches customer data from Firestore and updates the dashboard metrics.
+     */
     fetchCustomerData() {
         const customersCollection = collection(this.firestore, 'customers');
         collectionData(customersCollection)
@@ -86,15 +92,27 @@ export class DashboardComponent {
             });
     }
 
+    /**
+     * calculates the total number of customers.
+     * @param customers array of customer data.
+     */
     getTotalCustomerNumber(customers: any[]) {
         this.totalCustomers = customers.length;
     }
 
+    /**
+     * calculates the total number of unique countries.
+     * @param customers array of customer data.
+     */
     getTotalCountriesNumber(customers: any[]) {
         const uniqueCountries = new Set(customers.map(customer => customer.country));
         this.totalCountries = uniqueCountries.size;
     }
 
+    /**
+     * calculates the number of customers registered in the current month.
+     * @param customers array of customer data.
+     */
     getMonthlyRegistrations(customers: any[]) {
         const currentMonth = new Date().getMonth();
         const currentYear = new Date().getFullYear();
@@ -104,6 +122,12 @@ export class DashboardComponent {
         }).length;
     }
 
+    /**
+     * retrieves the top items based on a specified key.
+     * @param customers array of customer data.
+     * @param key the key to group and count items by.
+     * @returns array of top items with their counts.
+     */
     getTopItems(customers: any[], key: string) {
         const itemCounts = customers.reduce((counts: { [key: string]: number }, customer) => {
             counts[customer[key]] = (counts[customer[key]] || 0) + 1;
@@ -116,6 +140,10 @@ export class DashboardComponent {
             .slice(0, this.TOP_LIMIT);
     }
 
+    /**
+     * updates the top countries based on customer data.
+     * @param customers array of customer data.
+     */
     getTopCountries(customers: any[]) {
         this.topCountries = this.getTopItems(customers, 'country').map(({ item, count }) => ({
             country: item,
@@ -123,6 +151,10 @@ export class DashboardComponent {
         }));
     }
 
+    /**
+     * updates the top cities based on customer data.
+     * @param customers array of customer data.
+     */
     getTopCities(customers: any[]) {
         this.topCities = this.getTopItems(customers, 'city').map(({ item, count }) => ({
             city: item,
@@ -130,6 +162,12 @@ export class DashboardComponent {
         }));
     }
 
+    /**
+     * generates placeholder data for loading states.
+     * @param limit number of placeholder items to generate.
+     * @param key the key to use for placeholder data.
+     * @returns array of placeholder data.
+     */
     getLoadingData(limit: number, key: string) {
         return Array.from({ length: limit }, () => ({
             [key]: 'Loading...',
@@ -137,6 +175,9 @@ export class DashboardComponent {
         }));
     }
 
+    /**
+     * updates the dashboard cards with the latest metrics and data.
+     */
     updateDashboardCards() {
         this.simpleDashboardCards[0].value = this.totalCustomers;
         this.simpleDashboardCards[1].value = this.totalCountries;
@@ -145,6 +186,11 @@ export class DashboardComponent {
         this.tableDashboardCards[1].data = this.topCities;
     }
 
+    /**
+     * retrieves the appropriate SVG icon for a given type.
+     * @param type the type of icon to retrieve.
+     * @returns the SVG icon as a string.
+     */
     getCardIcons(type: string) {
         const icons: { [key: string]: string } = {
             'users': `

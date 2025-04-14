@@ -12,11 +12,13 @@ import { Customer } from '../../../models/customers.class';
 export class EditMenuComponent {
 
     @Input() customerID: string = '';
-
     customerData!: Customer;
-
     firestore: Firestore = inject(Firestore);
 
+    /**
+     * deletes the customer from the Firestore database.
+     * logs success or error messages based on the operation result.
+     */
     deleteCustomer() {
         if (this.customerID) {
             const customerDoc = doc(this.firestore, `customers/${this.customerID}`);
@@ -31,15 +33,20 @@ export class EditMenuComponent {
         }
     }
 
+    /**
+     * toggles the visibility of the edit menu.
+     */
     toggleEditMenu() {
         const menuElement = document.querySelector('app-edit-menu') as HTMLElement;
         menuElement.classList.toggle('hidden');
     }
 
+    /**
+     * opens the modal for editing customer details.
+     */
     openEditCustomerModal() {
         const editModal = document.querySelector('app-modal-edit-customer') as HTMLElement;
         editModal.classList.remove('hidden');
-        
     }
 
 }

@@ -21,10 +21,16 @@ export class ModalAddCustomerComponent {
     firestore: Firestore = inject(Firestore);
     avatarList: string[] = [];
 
+    /**
+     * initializes the component and populates the avatar list.
+     */
     constructor() {
         this.avatarList = Array.from({ length: 6 }, (_, i) => `av-${i + 1}`);
     }
 
+    /**
+     * closes the add customer modal and resets the form.
+     */
     closeAddCustomerModal() {
         const modal = document.querySelector('app-modal-add-customer') as HTMLElement;
         modal.classList.add('hidden');
@@ -32,6 +38,10 @@ export class ModalAddCustomerComponent {
         this.customer.avatar = '';
     }
 
+    /**
+     * adds a new customer to the Firestore database.
+     * resets the form and closes the modal upon successful addition.
+     */
     addCustomer() {
         const customersCollection = collection(this.firestore, 'customers');
         const customerData = {
@@ -50,9 +60,13 @@ export class ModalAddCustomerComponent {
         console.log(this.customer);
     }
 
+    /**
+     * resets the add customer form to its initial state.
+     */
     resetAddCustomerForm() {
         this.customer = new Customer();
         this.currentTab = 1;
         this.customer.avatar = '';
     }
+
 }

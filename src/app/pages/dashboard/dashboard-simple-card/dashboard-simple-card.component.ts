@@ -15,8 +15,16 @@ export class DashboardSimpleCardComponent {
 
     sanitizedIcon: SafeHtml = '';
 
+    /**
+     * initializes the component and sanitizes the provided icon HTML.
+     * @param sanitizer service to sanitize HTML content for safe rendering.
+     */
     constructor(private sanitizer: DomSanitizer) { }
 
+    /**
+     * lifecycle hook that runs after the component is initialized.
+     * sanitizes the icon input to ensure safe rendering in the template.
+     */
     ngOnInit() {
         this.sanitizedIcon = this.sanitizer.bypassSecurityTrustHtml(this.icon);
     }

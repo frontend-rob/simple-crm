@@ -9,6 +9,9 @@ import { RouterLink } from '@angular/router';
 })
 export class ToolbarComponent {
 
+    /**
+     * toggles the visibility of the sidebar menu.
+     */
     toggleSidebarMenu() {
         const menu = document.querySelector('app-sidebar') as HTMLElement;
         menu.classList.toggle('visible');

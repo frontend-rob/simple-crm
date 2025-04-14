@@ -34,6 +34,10 @@ export class CustomerDetailsComponent {
     copiedCustomer: Customer = new Customer();
     firestore: Firestore = inject(Firestore);
 
+    /**
+     * constructor to initialize the component and fetch customer data based on route parameters.
+     * @param route activatedRoute to access route parameters.
+     */
     constructor(private route: ActivatedRoute) {
         this.route.params.subscribe(params => {
             this.customerID = params['id'];
@@ -42,6 +46,10 @@ export class CustomerDetailsComponent {
         });
     }
 
+    /**
+     * fetches customer data from Firestore based on the provided customer ID.
+     * @param customerID the ID of the customer to fetch data for.
+     */
     getCustomerData(customerID: string) {
         const customerDoc = doc(this.firestore, `customers/${customerID}`);
 
@@ -54,18 +62,24 @@ export class CustomerDetailsComponent {
         });
     }
 
+    /**
+     * handles the customer data fetched from Firestore.
+     * @param data the raw customer data fetched from Firestore.
+     */
     handleCustomerData(data: any) {
         this.customerData = new Customer(data);
         this.customerData.id = this.customerID;
         console.log('Customer Data:', data);
     }
 
+    /**
+     * toggles the visibility of the edit menu and sets up a click listener to close it when clicking outside.
+     */
     toggleEditMenu() {
         const editMenu = document.querySelector('app-edit-menu') as HTMLElement;
         editMenu.classList.toggle('hidden');
 
         this.copiedCustomer = new Customer({ ...this.customerData });
-
 
         if (!editMenu.classList.contains('hidden')) {
             const closeMenu = (event: MouseEvent) => {
@@ -80,6 +94,9 @@ export class CustomerDetailsComponent {
         }
     }
 
+    /**
+     * deletes the customer from the database by invoking the deleteCustomer method on the edit menu component.
+     */
     deleteCustomerFromDB() {
         const editMenu = document.querySelector('app-edit-menu') as any;
         if (editMenu && editMenu.deleteCustomer) {
@@ -87,4 +104,5 @@ export class CustomerDetailsComponent {
             editMenu.deleteCustomer();
         }
     }
+
 }

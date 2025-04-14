@@ -35,6 +35,9 @@ export class CustomersComponent {
     allCustomersUnfiltered: Customer[] = [];
     firestore: Firestore = inject(Firestore);
 
+    /**
+     * initializes the component, fetches customer data from Firestore, and sorts it by last name.
+     */
     constructor() {
         const customersCollection = collection(this.firestore, 'customers');
         collectionData(customersCollection, { idField: 'id' })
@@ -49,11 +52,19 @@ export class CustomersComponent {
             });
     }
 
+    /**
+     * opens the modal for adding a new customer.
+     */
     openAddCustomerModal() {
         const modal = document.querySelector('app-modal-add-customer') as HTMLElement;
         modal.classList.remove('hidden');
     }
 
+    /**
+     * sorts the customer list by the specified field and direction.
+     * @param field the field to sort by.
+     * @param direction the direction of sorting ('asc' or 'desc').
+     */
     private sortCustomers(field: string, direction: 'asc' | 'desc') {
         this.allCustomers.sort((a: Customer, z: Customer) => {
             const aVal = a[field]?.toLowerCase?.() || '';
@@ -64,6 +75,10 @@ export class CustomersComponent {
         });
     }
 
+    /**
+     * toggles sorting by the specified field and updates the sort direction.
+     * @param field the field to sort by.
+     */
     sortBy(field: string) {
         if (this.sortField === field) {
             this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
@@ -75,6 +90,9 @@ export class CustomersComponent {
         this.sortCustomers(this.sortField, this.sortDirection);
     }
 
+    /**
+     * toggles the visibility of the search bar and focuses it if shown.
+     */
     showSearchBar() {
         const searchBar = document.getElementById('search-bar') as HTMLInputElement;
         const wasHidden = searchBar.classList.contains('hidden');
@@ -85,7 +103,10 @@ export class CustomersComponent {
         }
     }
 
-
+    /**
+     * filters the customer list based on the search term entered in the search bar.
+     * @param event the input event containing the search term.
+     */
     filterCustomers(event: Event) {
         const input = event.target as HTMLInputElement;
         this.searchTerm = input.value.toLowerCase();
