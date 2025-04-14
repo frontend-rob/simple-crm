@@ -57,4 +57,5 @@ export class SidebarComponent {
     isActiveStartsWith(url: string): boolean {
         return this.router.url.startsWith(url);
     }
+
 }

@@ -1,17 +1,20 @@
 .customer-detail-wrapper {
     display: flex;
+    flex-direction: column;
     width: 100%;
     flex: 1;
 
     .main-content {
         display: flex;
-        flex-direction: column;
+        max-width: 90rem;
         width: 100%;
 
         .content-wrapper {
             display: flex;
             flex-direction: column;
             flex: 1;
+            padding: 1.25rem 2rem;
+            overflow: auto;
         }
     }
 }
@@ -19,17 +22,17 @@
 .customer-detail-content {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
     width: 100%;
     height: auto;
+    margin: 3rem 0;
 
     .customer-detail-header {
         position: relative;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        height: 20rem;
-        padding: 2rem;
+        height: 16rem;
 
         .customer-hero-content {
             display: flex;
@@ -110,7 +113,6 @@
 .detail-cards {
     display: flex;
     gap: 1.5rem;
-    padding: 0 2rem 2rem 2rem;
 
     .customer-detail-card {
         display: flex;
@@ -156,7 +158,7 @@
                     }
 
                     td:first-child {
-                        width: 25%;
+                        width: 30%;
                         color: var(--text-primary);
                     }
 
@@ -168,6 +170,32 @@
                         padding-bottom: 0;
                     }
                 }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:48rem) {
+    .customer-detail-content {
+        .customer-detail-header {
+            gap: 2rem;
+            height: auto;
+            .customer-hero-content {
+                flex-direction: column;
+            }
+        }
+    }
+
+    .detail-cards {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 40rem) {
+    .customer-detail-wrapper {
+        .main-content {
+            .content-wrapper {
+                padding: 1rem;
             }
         }
     }

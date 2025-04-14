@@ -5,14 +5,14 @@
     --bg-neutral-200: #d4d4d4;
     --bg-primary: #34d399;
     --bg-error: #f43f5e;
-    --text-primary: #161616;
+    --text-primary: #161619;
     --text-secondary: #52525b;
     --text-inverse: #f5f5f5;
     --backdrop: #f5f5f5cc;
 }
 
 [data-theme="dark"] {
-    --bg-base-100: #18181b;
+    --bg-base-100: #161619;
     --bg-base-200: #1c1c1f;
     --bg-neutral-100: #27272a;
     --bg-neutral-200: #3f3f46;
@@ -20,6 +20,6 @@
     --bg-error: #fb7185;
     --text-primary: #f4f4f5;
     --text-secondary: #a1a1aa;
-    --text-inverse: #18181b;
-    --backdrop: #18181bcc;
+    --text-inverse: #161619;
+    --backdrop: #161619cc;
 }

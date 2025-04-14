@@ -1,7 +1,7 @@
 <div class="customers-wrapper">
-    <app-sidebar></app-sidebar>
+    <app-toolbar></app-toolbar>
     <div class="main-content">
-        <app-toolbar></app-toolbar>
+        <app-sidebar></app-sidebar>
         <div class="content-wrapper fade-in">
             <div class="customers-content">
                 <div class="customers-header">
@@ -31,7 +31,6 @@
                     <table class="customer-table">
                         <thead>
                             <tr>
-                                <th>#</th>
                                 <th class="sortable" (click)="sortBy('lastName')">
                                     Name
                                     <span *ngIf="sortField === 'lastName'">
@@ -54,8 +53,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let customer of allCustomers" routerLink="/customers/{{ customer.id }}">
-                                <td></td>
+                            <tr *ngFor="let customer of allCustomers" routerLink="/customers/{{ customer.id }}">                                
                                 <td>{{ customer.lastName }}, {{ customer.firstName }}</td>
                                 <td>{{ customer.country }}</td>
                                 <td>{{ customer.city }}</td>

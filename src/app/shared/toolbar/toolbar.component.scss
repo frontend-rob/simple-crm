@@ -6,9 +6,10 @@ app-toolbar {
     align-items: center;
     width: 100%;
     height: 5rem;
-    padding: 0 2rem;
+    padding: 0 1rem;
     border-bottom: 1px solid var(--bg-neutral-100);
     background-color: var(--bg-base-200);
+    z-index: 100;
 }
 
 .toolbar-wrapper {
@@ -16,4 +17,48 @@ app-toolbar {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+
+    .logo-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        height: 5rem;
+        text-decoration: none;
+
+        .main-logo {
+            width: 2.5rem;
+            height: 2.5rem;
+            aspect-ratio: 1;
+        }
+
+        .logo-text {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+    }
+
+    .btn-menu {
+        display: none;
+    }
+}
+
+@media screen and (max-width:64rem) {
+    .toolbar-wrapper {
+        .logo-wrapper {
+            .main-logo {
+                width: 2rem;
+                height: 2rem;
+            }
+        }
+
+        .btn-menu {
+            display: flex;
+        }
+    }
+}
+
+@media screen and (max-width:40rem) {
+    app-toolbar {
+        height: 4rem;
+    }
 }

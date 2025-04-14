@@ -17,12 +17,6 @@ html {
     overscroll-behavior: none;
 }
 
-@media (hover: none) and (pointer: coarse) {
-    html {
-        overscroll-behavior: auto;
-    }
-}
-
 body {
     text-rendering: optimizelegibility;
     background-color: var(--bg-base-100);
@@ -31,5 +25,5 @@ body {
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }

@@ -42,16 +42,6 @@ export class CustomerDetailsComponent {
         });
     }
 
-    // getCustomerData(customerID: string) {
-    //     const customerDoc = doc(this.firestore, `customers/${customerID}`);
-    //     getDoc(customerDoc).then(docSnapshot => {
-    //         if (docSnapshot.exists()) {
-    //             this.handleCustomerData(docSnapshot.data());
-    //         }
-    //     }).catch((error: Error) => {
-    //         console.error('Error fetching customer data:', error);
-    //     });
-    // }
     getCustomerData(customerID: string) {
         const customerDoc = doc(this.firestore, `customers/${customerID}`);
 

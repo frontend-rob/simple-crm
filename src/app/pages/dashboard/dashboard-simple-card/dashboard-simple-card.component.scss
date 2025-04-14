@@ -23,7 +23,7 @@ app-dashboard-simple-card {
             align-items: center;
             width: 3rem;
             height: 3rem;
-            aspect-ratio: 3rem;
+            aspect-ratio: 1;
             border-radius: 9999rem;
             background-color: var(--bg-primary);
             color: #161616;
@@ -41,6 +41,16 @@ app-dashboard-simple-card {
             font-size: 3rem;
             font-weight: 600;
             color: var(--text-primary);
+        }
+    }
+}
+
+@media screen and (max-width: 40rem) {
+    .dashboard-card {
+        .dashboard-card-body {
+            .card-result-number {
+                font-size: 2.5rem;
+            }
         }
     }
 }

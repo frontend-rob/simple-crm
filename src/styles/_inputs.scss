@@ -21,7 +21,7 @@ input[type="email"]::placeholder {
 
 input[type="text"]:focus-visible,
 input[type="email"]:focus-visible,
-textarea:focus-visible {
+input[type="search"]:focus-visible {
     border: 1.5px solid var(--text-secondary);
     outline: none;
 }

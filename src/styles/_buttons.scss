@@ -89,7 +89,7 @@
 
 .btn-ghost {
     color: var(--text-primary);
-    background-color: var(--backdrop);
+    background-color: transparent;
 
     svg {
         color: var(--text-primary);
@@ -161,9 +161,5 @@
     .btn-neutral:active {
         background-color: var(--bg-neutral-100);
         transform: scale(0.95);
-    }
-
-    .btn-neutral:not(:active) {
-        background-color: var(--bg-base-200);
     }
 }

@@ -58,3 +58,12 @@
         }
     }
 }
+
+@media screen and (max-width:30rem) {
+    .landing-page-hero {
+        .landing-page-logo {
+            width: 10rem;
+            height: 10rem;
+        }
+    }
+}

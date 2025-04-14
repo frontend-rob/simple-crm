@@ -1,12 +1,12 @@
 .dashboard-wrapper {
     display: flex;
+    flex-direction: column;
     width: 100%;
     flex: 1;
 
     .main-content {
         display: flex;
-        flex-direction: column;
-        gap: 3rem;
+        max-width: 90rem;
         width: 100%;
 
         .content-wrapper {
@@ -14,6 +14,7 @@
             flex-direction: column;
             flex: 1;
             padding: 1.25rem 2rem;
+            overflow: auto;
         }
     }
 }
@@ -24,6 +25,7 @@
     gap: 3rem;
     width: 100%;
     height: auto;
+    margin: 3rem 0;
 
     .dashboard-header {
         display: flex;
@@ -36,5 +38,21 @@
         align-items: center;
         gap: 1.25rem;
         width: 100%;
+    }
+}
+
+@media screen and (max-width:48rem) {
+    .dashboard-cards {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width:40rem){
+    .dashboard-wrapper {
+        .main-content {
+            .content-wrapper {
+                padding: 1rem;
+            }
+        }
     }
 }
