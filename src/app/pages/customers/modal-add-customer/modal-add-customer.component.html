@@ -16,8 +16,8 @@
             <!-- Tab Navigation -->
             <div class="tab-navigation">
                 <div class="tab-item" [class.active]="currentTab === 1" (click)="currentTab = 1">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
                         class="lucide lucide-user-round-icon lucide-user-round">
                         <circle cx="12" cy="8" r="5" />
                         <path d="M20 21a8 8 0 0 0-16 0" />
@@ -25,16 +25,19 @@
                     Personal
                 </div>
                 <div class="tab-item" [class.active]="currentTab === 2" (click)="currentTab = 2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin-icon lucide-map-pin">
-                        <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-map-pin-icon lucide-map-pin">
+                        <path
+                            d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
                         <circle cx="12" cy="10" r="3" />
                     </svg>
                     Address
                 </div>
                 <div class="tab-item" [class.active]="currentTab === 3" (click)="currentTab = 3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-image-icon lucide-image">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-image-icon lucide-image">
                         <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
                         <circle cx="9" cy="9" r="2" />
                         <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
@@ -45,24 +48,57 @@
             <form (ngSubmit)="addCustomer()">
                 <!-- Tab 1: personal info -->
                 <div *ngIf="currentTab === 1" class="tab-content">
-                    <input type="text" name="first-name" [(ngModel)]="customer.firstName" placeholder="First Name" autocomplete="on">
-                    <input type="text" name="last-name" [(ngModel)]="customer.lastName" placeholder="Last Name" autocomplete="on">
-                    <input type="email" name="email" [(ngModel)]="customer.email" placeholder="E-Mail" autocomplete="on">
-                    <input type="text" name="phone" [(ngModel)]="customer.phone" placeholder="Phone" autocomplete="on">
+                    <div class="input-field">
+                        <span class="label">First Name</span>
+                        <input type="text" name="first-name" placeholder="Customer’s first name" autocomplete="on"
+                            [(ngModel)]="customer.firstName">
+                    </div>
+                    <div class="input-field">
+                        <span class="label">Last Name</span>
+                        <input type="text" name="last-name" placeholder="Customer’s last name" autocomplete="on"
+                            [(ngModel)]="customer.lastName">
+                    </div>
+                    <div class="input-field">
+                        <span class="label">E-Mail</span>
+                        <input type="email" name="email" placeholder="customer@example.com" autocomplete="on"
+                            [(ngModel)]="customer.email">
+                    </div>
+                    <div class="input-field">
+                        <span class="label">Phone</span>
+                        <input type="text" name="phone" placeholder="+1 234 567 890" autocomplete="on"
+                            [(ngModel)]="customer.phone">
+                    </div>
                 </div>
                 <!-- Tab 2: address -->
                 <div *ngIf="currentTab === 2" class="tab-content">
-                    <input type="text" name="address" [(ngModel)]="customer.address" placeholder="Address" autocomplete="on">
-                    <input type="text" name="zip-code" [(ngModel)]="customer.zipCode" placeholder="Zip Code" autocomplete="on">
-                    <input type="text" name="city" [(ngModel)]="customer.city" placeholder="City" autocomplete="on">
-                    <input type="text" name="country" [(ngModel)]="customer.country" placeholder="Country" autocomplete="on">
+                    <div class="input-field">
+                        <span class="label">Address</span>
+                        <input type="text" name="address" placeholder="Customer’s street and number" autocomplete="on"
+                            [(ngModel)]="customer.address">
+                    </div>
+                    <div class="input-field">
+                        <span class="label">ZIP Code</span>
+                        <input type="text" name="zip-code" placeholder="Postal/ZIP code goes here" autocomplete="on"
+                            [(ngModel)]="customer.zipCode">
+                    </div>
+                    <div class="input-field">
+                        <span class="label">City</span>
+                        <input type="text" name="city" placeholder="Which city are they in?" autocomplete="on"
+                            [(ngModel)]="customer.city">
+                    </div>
+                    <div class="input-field">
+                        <span class="label">Country</span>
+                        <input type="text" name="country" placeholder="Which country are they in?" autocomplete="on"
+                            [(ngModel)]="customer.country">
+                    </div>
                 </div>
                 <!-- Tab 3: avatars -->
                 <div *ngIf="currentTab === 3" class="tab-content">
                     <span>Choose an avatar:</span>
                     <div class="avatar-options">
                         <div class="avatar" *ngFor="let avatar of avatarList">
-                            <img [src]="'assets/img/' + avatar + '.svg'" (click)="customer.avatar = avatar" [class.selected]="customer.avatar === avatar">
+                            <img [src]="'assets/img/' + avatar + '.svg'" (click)="customer.avatar = avatar"
+                                [class.selected]="customer.avatar === avatar">
                         </div>
                     </div>
                 </div>

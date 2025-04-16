@@ -23,6 +23,7 @@
         border: 1px solid var(--bg-neutral-100);
         border-radius: 1.25rem;
         background-color: var(--bg-base-200);
+        overflow-y: auto;
 
         .modal-header {
             display: flex;
@@ -67,13 +68,13 @@
         border-radius: 9999rem;
         background-color: var(--bg-primary);
         font-size: 0.875rem;
-        color: var(--text-primary);
+        color: var(--text-primary-accent);
         cursor: pointer;
 
         svg {
             height: 1.25rem;
             width: 1.25rem;
-            color: var(--text-primary);
+            color: var(---text-primary-accent);
         }
     }
 
@@ -82,25 +83,23 @@
         flex-direction: column;
         width: 100%;
         gap: 2rem;
-
-        .input-field {
-            position: relative;
-            width: 100%;
-
-            svg {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                right: 1rem;
-                color: var(--bg-neutral-200);
-            }
-        }
     }
 
     .tab-content {
         display: flex;
         flex-direction: column;
         gap: 1rem;
+
+        .input-field {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+
+            .label {
+                font-size: 0.875rem;
+                color: var(--text-secondary);
+            }
+        }
 
         .avatar-options {
             display: flex;
@@ -143,8 +142,14 @@
 }
 
 @media screen and (max-width:30rem) {
-    .modal-content {
-        height: 100%;
+    .modal-edit-customer {
+        padding: 0;
+
+        .modal-content {
+            height: 100%;
+            padding: 1.25rem;
+            border-radius: 0;
+        }
     }
 
     .modal-inner-content {

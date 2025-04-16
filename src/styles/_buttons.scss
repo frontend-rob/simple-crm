@@ -103,17 +103,17 @@
 }
 
 .btn-primary {
-    color: #18181b;
+    color: var(--text-primary-accent);
     background-color: var(--bg-primary);
 
     svg {
-        color: #18181b;
+        color: var(--text-primary-accent);
         transition: none;
     }
 }
 
 .btn-primary:hover {
-    @include button-hover(color-mix(in srgb, var(--bg-primary) 90%, transparent 10%), #18181b);
+    @include button-hover(color-mix(in srgb, var(--bg-primary) 90%, transparent 10%), var(--text-primary-accent));
     transition: 125ms ease;
 }
 

@@ -34,8 +34,9 @@
                     Address
                 </div>
                 <div class="tab-item" [class.active]="currentTab === 3" (click)="currentTab = 3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-image-icon lucide-image">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-image-icon lucide-image">
                         <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
                         <circle cx="9" cy="9" r="2" />
                         <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
@@ -46,17 +47,49 @@
             <form (ngSubmit)="saveUpdatedCustomerData()">
                 <!-- Tab 1: personal info -->
                 <div *ngIf="currentTab === 1" class="tab-content">
-                    <input type="text" name="first-name" [(ngModel)]="updateCustomerData.firstName" placeholder="First Name" autocomplete="on">
-                    <input type="text" name="last-name" [(ngModel)]="updateCustomerData.lastName" placeholder="Last Name" autocomplete="on">
-                    <input type="email" name="email" [(ngModel)]="updateCustomerData.email" placeholder="E-Mail" autocomplete="on">
-                    <input type="text" name="phone" [(ngModel)]="updateCustomerData.phone" placeholder="Phone" autocomplete="on">
+                    <div class="input-field">
+                        <span class="label">First Name</span>
+                        <input type="text" name="first-name" placeholder="Customer’s first name" autocomplete="on"
+                            [(ngModel)]="updateCustomerData.firstName">
+                    </div>
+                    <div class="input-field">
+                        <span class="label">Last Name</span>
+                        <input type="text" name="last-name" placeholder="Customer’s last name" autocomplete="on"
+                            [(ngModel)]="updateCustomerData.lastName">
+                    </div>
+                    <div class="input-field">
+                        <span class="label">E-Mail</span>
+                        <input type="email" name="email" placeholder="customer@example.com" autocomplete="on"
+                            [(ngModel)]="updateCustomerData.email">
+                    </div>
+                    <div class="input-field">
+                        <span class="label">Phone</span>
+                        <input type="text" name="phone" placeholder="+1 234 567 890" autocomplete="on"
+                            [(ngModel)]="updateCustomerData.phone">
+                    </div>
                 </div>
                 <!-- Tab 2: address -->
                 <div *ngIf="currentTab === 2" class="tab-content">
-                    <input type="text" name="address" [(ngModel)]="updateCustomerData.address" placeholder="Address" autocomplete="on">
-                    <input type="text" name="zip-code" [(ngModel)]="updateCustomerData.zipCode" placeholder="Zip Code" autocomplete="on">
-                    <input type="text" name="city" [(ngModel)]="updateCustomerData.city" placeholder="City" autocomplete="on">
-                    <input type="text" name="country" [(ngModel)]="updateCustomerData.country" placeholder="Country" autocomplete="on">
+                    <div class="input-field">
+                        <span class="label">Address</span>
+                        <input type="text" name="address" placeholder="Customer’s street and number" autocomplete="on"
+                            [(ngModel)]="updateCustomerData.address">
+                    </div>
+                    <div class="input-field">
+                        <span class="label">ZIP Code</span>
+                        <input type="text" name="zip-code" placeholder="Postal/ZIP code goes here" autocomplete="on"
+                            [(ngModel)]="updateCustomerData.zipCode">
+                    </div>
+                    <div class="input-field">
+                        <span class="label">City</span>
+                        <input type="text" name="city" placeholder="Which city are they in?" autocomplete="on"
+                            [(ngModel)]="updateCustomerData.city">
+                    </div>
+                    <div class="input-field">
+                        <span class="label">Country</span>
+                        <input type="text" name="country" placeholder="Which country are they in?" autocomplete="on"
+                            [(ngModel)]="updateCustomerData.country">
+                    </div>
                 </div>
                 <!-- Tab 3: avatars -->
                 <div *ngIf="currentTab === 3" class="tab-content">
