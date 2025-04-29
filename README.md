@@ -1,59 +1,92 @@
-# SimpleCrm
+# Simple CRM
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.5.
+This project was created during the [Developer Akademie](https://developerakademie.com/) bootcamp to practice **Angular** and **TypeScript** concepts. As a learning exercise, some features may not be fully implemented.
 
-## Development server
+<mark>NOTE:</mark> This project uses images from [FreePik](https://freepik.com/), which are not included in the repository to comply with licensing agreements.
 
-To start a local development server, run:
+<br>
 
-```bash
-ng serve
+## Features
+
+Here's an overview of the key functionalities:
+
+- **Real-Time Cloud Storage:** All data is instantly synced across devices using Firebase - secure, fast, and reliable.
+
+- **Customer Management:** Easily add, edit, and organize customer information with just a few clicks.
+
+- **Dashboard with Insights:** Get a clear overview of key metrics like top countries, cities, and new customers at a glance.
+
+- **Fully Responsive Design:** Optimized for all screen sizes - use it seamlessly on desktop, tablet, or smartphone.
+
+- **Light & Dark Mode:** Switch between light and dark themes to match your preference and reduce eye strain.
+
+<br>
+
+## Preview
+
+![mockup-simple-crm](https://github.com/user-attachments/assets/7c0b35d2-cd8e-4b11-8f96-6ca1b3c65565)
+
+
+## Run the Application
+
+**1. Version Information:**
+
+This project uses the following versions:
+- `Node: 22.13.1`
+- `Firebase: 13.31.0`
+- `Angular CLI: 19.2.9`
+
+Make sure to use compatible versions to avoid any conflicts.
+
+<br>
+
+**2. Clone the Repository:**
+
+Download the source code by clicking the <kbd>Code</kbd> button or clone the repository using Git:
+```
+https://github.com/frontend-rob/simple-crm.git
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+<br>
 
-## Code scaffolding
+**3. Install Dependencies:**
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+Navigate to the project directory and install the required packages:
 ```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
+cd <project-directory>
+npm install
 ```
+Note: Replace `<project-directory>` with the actual folder name of your project (e.g., simple-crm).
 
-## Building
+<br>
 
-To build the project run:
+**4. Start Development Server:**
 
-```bash
-ng build
+Launch the development server with the following command:
 ```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
+ng serve --open
 ```
+The application will open automatically at `http://localhost:4200/`. Any changes you make to the source files will trigger an automatic reload.
 
-## Running end-to-end tests
+<br>
 
-For end-to-end (e2e) testing, run:
+**5. Further Help:**
 
-```bash
-ng e2e
-```
+For more information on Angular CLI commands, run `ng help` or vistit the official [Angular CLI Reference](https://angular.dev/cli).
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
-## Additional Resources
+<br>
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Contributing
+Since this is a learning project, further contributions aren’t expected. However, I’m always open to feedback, suggestions, or creative ideas — if you’d like to share any thoughts, feel free to reach out!
+
+<br>
+
+## License
+
+The source code for this project is open-source and distributed under the MIT License and may be used as a reference. Please note that external content from third-party sources is included. For detailed licensing information, refer to the respective websites:
+
+- [FreePik](https://freepik.com/)
+- [Lucide Icons](https://lucide.dev/)
+
+You can find further details, including folder structures and links to relevant content sources, in the readme files located within the public folder of this repository.
