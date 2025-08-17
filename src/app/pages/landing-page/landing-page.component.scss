@@ -10,8 +10,8 @@
     background-color: var(--bg-base-100);
 
     .landing-page-logo {
-        width: 16rem;
-        height: 16rem;
+        width: 12rem;
+        height: 12rem;
     }
 
     .landing-page-title {
@@ -62,8 +62,8 @@
 @media screen and (max-width:30rem) {
     .landing-page-hero {
         .landing-page-logo {
-            width: 10rem;
-            height: 10rem;
+            width: 6rem;
+            height: 6rem;
         }
     }
 }
